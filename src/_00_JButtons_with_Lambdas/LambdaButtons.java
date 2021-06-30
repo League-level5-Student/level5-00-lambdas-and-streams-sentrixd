@@ -1,6 +1,9 @@
 package _00_JButtons_with_Lambdas;
 
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -20,6 +23,26 @@ public class LambdaButtons {
 		
 		//1. Call the addActionListener methods for each button. Use lambdas
 		//   to define to functionality of the buttons.
+		addNumbers.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("2 + 2 = " + (2+2));
+			}
+		});
+		
+		randNumber.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println(new Random().nextInt());
+			}
+		});
+		
+		tellAJoke.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Why do seagulls fly over the sea? If they flew over the bay, they would be bagels.");
+			}
+		});
 		
 		window.setVisible(true);
 		window.pack();
